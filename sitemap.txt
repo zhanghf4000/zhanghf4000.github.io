@@ -1,4 +1,4 @@
+http://example.com/music/index.html
 http://example.com/2022/12/03/ass/
 http://example.com/2022/12/03/hello-world/
-http://example.com/2022/12/03/hello/
 http://example.com/
