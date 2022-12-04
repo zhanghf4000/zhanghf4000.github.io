@@ -1,6 +1,10 @@
+http://example.com/categories/page.html
+http://example.com/ida/index.html
+http://example.com/link/index.html
+http://example.com/categories/index.html
+http://example.com/music/index.html
 http://example.com/2022/12/03/ass/
 http://example.com/2022/12/03/hello/
-http://example.com/music/index.html
 http://example.com/2022/12/03/hello-world/
 http://example.com/
 http://example.com/tags/helloword/
