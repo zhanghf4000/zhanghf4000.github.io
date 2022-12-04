@@ -8,3 +8,4 @@ http://example.com/2022/12/03/hello/
 http://example.com/2022/12/03/hello-world/
 http://example.com/
 http://example.com/tags/helloword/
+http://example.com/categories/HI/
