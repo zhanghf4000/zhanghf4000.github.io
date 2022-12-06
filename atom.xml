@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-04T12:09:12.077Z</updated>
+  <updated>2022-12-06T11:05:29.373Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>汽车空气动力学分析</title>
+    <link href="http://example.com/2022/12/06/air_config/"/>
+    <id>http://example.com/2022/12/06/air_config/</id>
+    <published>2022-12-05T16:00:00.000Z</published>
+    <updated>2022-12-06T11:05:29.373Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h1><p>##下载模型<br>   可以到各种网站找免费模型：<br><br>例如:<br> <iframe   height=850  width=90%  src="https://www.aigei.com/mach/3d/solid_works/"   frameborder=0   allowfullscreen><br> </iframe></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;模型导入&quot;&gt;&lt;a href=&quot;#模型导入&quot; class=&quot;headerlink&quot; title=&quot;模型导入&quot;&gt;&lt;/a&gt;模型导入&lt;/h1&gt;&lt;p&gt;##下载模型&lt;br&gt;   可以到各种网站找免费模型：&lt;br&gt;&lt;br&gt;例如:&lt;br&gt; &lt;iframe  
+ height=85</summary>
+      
+    
+    
+    
+    <category term="有限元分析" scheme="http://example.com/categories/%E6%9C%89%E9%99%90%E5%85%83%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="ANSYS" scheme="http://example.com/tags/ANSYS/"/>
+    
+  </entry>
   
   <entry>
     <title>HI</title>
