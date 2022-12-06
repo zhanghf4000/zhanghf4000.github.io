@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-06T12:39:40.108Z</updated>
+  <updated>2022-12-06T12:43:37.333Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2022/12/06/air_config/"/>
     <id>http://example.com/2022/12/06/air_config/</id>
     <published>2022-12-05T16:00:00.000Z</published>
-    <updated>2022-12-06T12:39:40.108Z</updated>
+    <updated>2022-12-06T12:43:37.333Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h1><p>下载模型</p><h3 id="可以到各种网站找免费模型："><a href="#可以到各种网站找免费模型：" class="headerlink" title="可以到各种网站找免费模型："></a>可以到各种网站找免费模型：<br></h3><p>例如:<br> <iframe   height=850  width=90%  src="https://www.aigei.com/mach/3d/solid_works/"   frameborder=0   allowfullscreen><br> </iframe></p><h1 id="进入ansys-workbench界面"><a href="#进入ansys-workbench界面" class="headerlink" title="进入ansys workbench界面"></a>进入ansys workbench界面</h1><p>找到以下模块并连接：<br><br><a href="https://imgse.com/i/zciHj1"><img src="https://s1.ax1x.com/2022/12/06/zciHj1.jpg" alt="zciHj1.jpg"></a><br>将模型生成stp文件（用三维建模软件比如我用的solidworks）导入DesignModeler中（右键上图Geometry）,进行如下几何模型操作：<br></p><ol><li>注意几何大小在units中调整单位<br></li><li>注意创建流域时使用布尔运算在大流体域中创建车模型墙面<br></li><li>创建的小enclosour以及模型面作为网格加密区<br></li><li>压缩和隐藏的区别<br></li><li>需要命名网格划分所需要的面<br></li></ol><h1 id="进入网格划分界面进行网格划分"><a href="#进入网格划分界面进行网格划分" class="headerlink" title="进入网格划分界面进行网格划分"></a>进入网格划分界面进行网格划分</h1><ol><li>添加网格加密区：一个实体加密区，一个车模外壳墙面加密区</li><li></li></ol><p>持续更新中…</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h1><p>下载模型</p><h3 id="可以到各种网站找免费模型："><a href="#可以到各种网站找免费模型：" class="headerlink" title="可以到各种网站找免费模型："></a>可以到各种网站找免费模型：<br></h3><p>例如:<br> <iframe   height=850  width=90%  src="https://www.aigei.com/mach/3d/solid_works/"   frameborder=0   allowfullscreen><br> </iframe></p><h1 id="进入ansys-workbench界面"><a href="#进入ansys-workbench界面" class="headerlink" title="进入ansys workbench界面"></a>进入ansys workbench界面</h1><p>找到以下模块并连接：<br><br><a href="https://imgse.com/i/zciHj1"><img src="https://s1.ax1x.com/2022/12/06/zciHj1.jpg" alt="zciHj1.jpg"></a><br>将模型生成stp文件（用三维建模软件比如我用的solidworks）导入DesignModeler中（右键上图Geometry）,进行如下几何模型操作：<br></p><ol><li>注意几何大小在units中调整单位<br></li></ol> <iframe  height=498  width=510  src="https://hevon.oss-cn-hangzhou.aliyuncs.com/2022-12-06%2020-12-16.mp4"> </iframe><ol start="2"><li>注意创建流域时使用布尔运算在大流体域中创建车模型墙面<br></li><li>创建的小enclosour以及模型面作为网格加密区<br></li><li>压缩和隐藏的区别<br></li><li>需要命名网格划分所需要的面<br></li></ol><h1 id="进入网格划分界面进行网格划分"><a href="#进入网格划分界面进行网格划分" class="headerlink" title="进入网格划分界面进行网格划分"></a>进入网格划分界面进行网格划分</h1><ol><li>添加网格加密区：一个实体加密区，一个车模外壳墙面加密区</li><li></li></ol><p>持续更新中…</p>]]></content>
     
     
       
