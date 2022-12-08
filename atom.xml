@@ -23,7 +23,7 @@
     <published>2022-12-05T16:00:00.000Z</published>
     <updated>2022-12-07T07:41:53.242Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h1><h2 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h2><pre><code>可以到各种网站找免费模型：</code></pre><p>例如:<br> <iframe   height=850  width=90%  src="https://www.aigei.com/mach/3d/solid_works/"   frameborder=0   allowfullscreen><br> </iframe></p><h2 id="进入ansys-workbench界面"><a href="#进入ansys-workbench界面" class="headerlink" title="进入ansys workbench界面"></a>进入ansys workbench界面</h2><p>找到以下模块并连接：<br><br><a href="https://imgse.com/i/zciHj1"><img src="https://s1.ax1x.com/2022/12/06/zciHj1.jpg" alt="zciHj1.jpg"></a><br>将模型生成stp文件（用三维建模软件比如我用的solidworks）导入DesignModeler中（右键上图Geometry）,进行如下几何模型操作：<br></p><ol><li>注意几何大小在units中调整单位<br></li></ol><video id="mmedia-TNVmQqwTjyaxpwqA" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/68263886243791576887269805/v.f100040.mp4" width="100%" ></video><ol start="2"><li>注意创建流域时使用布尔运算在大流体域中创建车模型墙面<br></li><li>创建的小enclosour以及模型面作为网格加密区<br></li><li>压缩和隐藏的区别<br></li><li>需要命名网格划分所需要的面<br></li></ol><video id="mmedia-RHvZaBjkRwWJOdEt" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/3a80c457243791576920355149/v.f100040.mp4" width="100%" ></video><h1 id="进入网格划分界面进行网格划分"><a href="#进入网格划分界面进行网格划分" class="headerlink" title="进入网格划分界面进行网格划分"></a>进入网格划分界面进行网格划分</h1><p>操作：</p><video id="mmedia-MdmcklIXvKazFMBz" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/3a376b11243791576920313905/v.f100040.mp4" width="100%" ></video><ol><li>添加网格加密区：一个实体加密区(boi)，一个车模外壳墙面加密区(face)<br>//我的操作在过程中出了一点问题但过程中改了过来，跟着做可以做出来，不要着急<br></li><li>对命名几何面做边界操作，设置空气流入，流出，以及墙壁边界和对称面（symmetry,可以通过对称操作看到整个模型云图）<br></li><li>剩余操作大部分默认（如想进一步更改可以参考<a href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v202/en/wb2_help/wb2h_FLTGridapp.html?q=fluent">Fluent(with Fluent Meshing)帮助文档</a>）</li></ol><h1 id="进入计算界面"><a href="#进入计算界面" class="headerlink" title="进入计算界面"></a>进入计算界面</h1><p>点击 左上角 to sloution 进入计算界面。<br><br>操作：</p><video id="mmedia-TqoFPbRNhOAdUFvT" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/c22ba1e1243791576925622985/v.f100040.mp4" width="100%" ></video><ol><li>设置计算方法（默认，如想进一步更改可以参考<a href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v202/en/wb2_help/wb2h_FLTGridapp.html?q=fluent">Fluent(with Fluent Meshing)帮助文档</a>）<br></li><li>设置空气流速以及symmetry。</li><li>计算迎风面积做初始条件（省略这步也可以出来，前提是模型约束较好）。</li><li>加监测点（具体用法见帮助文档），加的是对阻力系数的计算检测。</li><li>初始化计算，会进行十步运算，可以在信息框中查看是否收敛（越来越小就是收敛）。</li><li>进行计算，由于时间问题我设置的步数较少，正常计算可以设置大一点。</li><li><img src="https://s2.loli.net/2022/12/07/79ZN6SVzKQorWjw.jpg" alt="Snipaste_2022-12-07_13-31-29.jpg"><h1 id="收敛问题"><a href="#收敛问题" class="headerlink" title="收敛问题"></a>收敛问题</h1>如果计算不收敛，可以把如下数值设小，计算速度也会变慢（比如全部设置成0.000001）</li></ol><p><img src="https://s2.loli.net/2022/12/07/cz2kT1DJiVexynN.jpg" alt="Snipaste_2022-12-07_13-36-58.jpg"></p><p>持续更新中…</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="模型导入"><a href="#模型导入" class="headerlink" title="模型导入"></a>模型导入</h1><h2 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h2><pre><code>可以到各种网站找免费模型：</code></pre><p>例如:<br> <iframe   height=850  width=90%  src="https://www.aigei.com/mach/3d/solid_works/"   frameborder=0   allowfullscreen><br> </iframe></p><h2 id="进入ansys-workbench界面"><a href="#进入ansys-workbench界面" class="headerlink" title="进入ansys workbench界面"></a>进入ansys workbench界面</h2><p>找到以下模块并连接：<br><br><a href="https://imgse.com/i/zciHj1"><img src="https://s1.ax1x.com/2022/12/06/zciHj1.jpg" alt="zciHj1.jpg"></a><br>将模型生成stp文件（用三维建模软件比如我用的solidworks）导入DesignModeler中（右键上图Geometry）,进行如下几何模型操作：<br></p><ol><li>注意几何大小在units中调整单位<br></li></ol><video id="mmedia-fRIRdQYODGGTeGCI" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/68263886243791576887269805/v.f100040.mp4" width="100%" ></video><ol start="2"><li>注意创建流域时使用布尔运算在大流体域中创建车模型墙面<br></li><li>创建的小enclosour以及模型面作为网格加密区<br></li><li>压缩和隐藏的区别<br></li><li>需要命名网格划分所需要的面<br></li></ol><video id="mmedia-GdJYDtMlQmkVrjTp" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/3a80c457243791576920355149/v.f100040.mp4" width="100%" ></video><h1 id="进入网格划分界面进行网格划分"><a href="#进入网格划分界面进行网格划分" class="headerlink" title="进入网格划分界面进行网格划分"></a>进入网格划分界面进行网格划分</h1><p>操作：</p><video id="mmedia-VZcEFUzQJWZsqPYc" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/3a376b11243791576920313905/v.f100040.mp4" width="100%" ></video><ol><li>添加网格加密区：一个实体加密区(boi)，一个车模外壳墙面加密区(face)<br>//我的操作在过程中出了一点问题但过程中改了过来，跟着做可以做出来，不要着急<br></li><li>对命名几何面做边界操作，设置空气流入，流出，以及墙壁边界和对称面（symmetry,可以通过对称操作看到整个模型云图）<br></li><li>剩余操作大部分默认（如想进一步更改可以参考<a href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v202/en/wb2_help/wb2h_FLTGridapp.html?q=fluent">Fluent(with Fluent Meshing)帮助文档</a>）</li></ol><h1 id="进入计算界面"><a href="#进入计算界面" class="headerlink" title="进入计算界面"></a>进入计算界面</h1><p>点击 左上角 to sloution 进入计算界面。<br><br>操作：</p><video id="mmedia-rloFfXokwrFTANoT" controls=true vide="video" src="http://1314774099.vod2.myqcloud.com/ea7bb5bevodtranssh1314774099/c22ba1e1243791576925622985/v.f100040.mp4" width="100%" ></video><ol><li>设置计算方法（默认，如想进一步更改可以参考<a href="https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v202/en/wb2_help/wb2h_FLTGridapp.html?q=fluent">Fluent(with Fluent Meshing)帮助文档</a>）<br></li><li>设置空气流速以及symmetry。</li><li>计算迎风面积做初始条件（省略这步也可以出来，前提是模型约束较好）。</li><li>加监测点（具体用法见帮助文档），加的是对阻力系数的计算检测。</li><li>初始化计算，会进行十步运算，可以在信息框中查看是否收敛（越来越小就是收敛）。</li><li>进行计算，由于时间问题我设置的步数较少，正常计算可以设置大一点。</li><li><img src="https://s2.loli.net/2022/12/07/79ZN6SVzKQorWjw.jpg" alt="Snipaste_2022-12-07_13-31-29.jpg"><h1 id="收敛问题"><a href="#收敛问题" class="headerlink" title="收敛问题"></a>收敛问题</h1>如果计算不收敛，可以把如下数值设小，计算速度也会变慢（比如全部设置成0.000001）</li></ol><p><img src="https://s2.loli.net/2022/12/07/cz2kT1DJiVexynN.jpg" alt="Snipaste_2022-12-07_13-36-58.jpg"></p><p>持续更新中…</p>]]></content>
     
     
     <summary type="html">简单空气动力学计算，具体操作在视频中，注意点在视频下方</summary>
@@ -38,72 +38,19 @@
   </entry>
   
   <entry>
-    <title>HI</title>
-    <link href="http://example.com/2022/12/04/page/"/>
-    <id>http://example.com/2022/12/04/page/</id>
-    <published>2022-12-04T11:03:31.000Z</published>
-    <updated>2022-12-04T12:09:12.077Z</updated>
-    
-    
-    
-    
-    <category term="HI" scheme="http://example.com/categories/HI/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ass</title>
+    <title>青春有几点口罩的味道</title>
     <link href="http://example.com/2022/12/03/ass/"/>
     <id>http://example.com/2022/12/03/ass/</id>
-    <published>2022-12-03T02:14:19.000Z</published>
-    <updated>2022-12-03T07:03:09.495Z</updated>
+    <published>2022-12-02T16:00:00.000Z</published>
+    <updated>2022-12-07T16:00:00.000Z</updated>
     
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2022/12/03/hello/"/>
-    <id>http://example.com/2022/12/03/hello/</id>
-    <published>2022-12-03T01:53:56.573Z</published>
-    <updated>2022-12-03T06:56:05.939Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <category term="杂谈" scheme="http://example.com/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
-    
-    <category term="helloword" scheme="http://example.com/tags/helloword/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2022/12/03/hello-world/"/>
-    <id>http://example.com/2022/12/03/hello-world/</id>
-    <published>2022-12-03T01:37:09.320Z</published>
-    <updated>2022-12-03T01:36:28.288Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
+    <category term="杂谈" scheme="http://example.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
