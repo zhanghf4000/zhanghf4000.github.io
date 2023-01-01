@@ -74,7 +74,7 @@
 
   
   <url>
-    <loc>http://example.com/tags/matlab/</loc>
+    <loc>http://example.com/tags/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -88,7 +88,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%9D%82%E8%B0%88/</loc>
+    <loc>http://example.com/tags/matlab/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -97,7 +97,7 @@
 
   
   <url>
-    <loc>http://example.com/categories/MATLAB%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://example.com/categories/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -111,7 +111,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E6%9D%82%E8%B0%88/</loc>
+    <loc>http://example.com/categories/MATLAB%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2023-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
