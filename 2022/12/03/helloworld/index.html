@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>使用自建库打印第一个hello world | Alice_52's home</title><meta name="author" content="hevon"><meta name="copyright" content="hevon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hello World! 在vs中创建静态库并让所有项目使用  项目创建 创建一个空项目并在解决方案中新建另一个项目； 打开显示所有文件。 在两个项目文件夹下创建src文件。   以上为本人创建项目习惯  创建完成后解决方案资源管理器目录如下：  项目文件结构如下：  文件添加与编写在Engine项目的src下添加.h和.cpp文件如下： Engine.h 123456789#pragma onc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用自建库打印第一个hello world">
+<meta property="og:url" content="http://example.com/2022/12/03/helloworld/index.html">
+<meta property="og:site_name" content="Alice_52&#39;s home">
+<meta property="og:description" content="Hello World! 在vs中创建静态库并让所有项目使用  项目创建 创建一个空项目并在解决方案中新建另一个项目； 打开显示所有文件。 在两个项目文件夹下创建src文件。   以上为本人创建项目习惯  创建完成后解决方案资源管理器目录如下：  项目文件结构如下：  文件添加与编写在Engine项目的src下添加.h和.cpp文件如下： Engine.h 123456789#pragma onc">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg">
+<meta property="article:published_time" content="2022-12-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-07T16:00:00.000Z">
+<meta property="article:author" content="hevon">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/12/03/helloworld/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用自建库打印第一个hello world',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-08 00:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/ahzoo.css"><link rel="stylesheet" href="/css/tran.css"><link rel="stylesheet" href="/css/back.css"><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Alice_52's home" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/me1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Alice_52's home</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用自建库打印第一个hello world</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-12-02T16:00:00.000Z" title="Created 2022-12-03 00:00:00">2022-12-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-12-07T16:00:00.000Z" title="Updated 2022-12-08 00:00:00">2022-12-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c/">c++</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><blockquote>
+<p><font color=blue>在vs中创建静态库并让所有项目使用</font></p>
+</blockquote>
+<h2 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h2><ol>
+<li>创建一个空项目并在解决方案中新建另一个项目；</li>
+<li>打开<font color=red>显示所有文件</font>。</li>
+<li>在两个项目文件夹下创建src文件。</li>
+</ol>
+<blockquote>
+<p>以上为本人创建项目习惯</p>
+</blockquote>
+<p>创建完成后<font color=red>解决方案资源管理器目录如下</font>：</p>
+<p><img src="https://s2.loli.net/2023/01/20/kI8A3f1Gt9WUzbY.jpg" alt="c2_1.jpg"></p>
+<p>项目文件结构如下：</p>
+<p><img src="https://s2.loli.net/2023/01/20/QVRqLwfhoy4X8GO.jpg" alt="c2_2.jpg"></p>
+<h2 id="文件添加与编写"><a href="#文件添加与编写" class="headerlink" title="文件添加与编写"></a>文件添加与编写</h2><p>在Engine项目的src下添加.h和.cpp文件如下：</p>
+<p><code>Engine.h</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="comment">//声明函数</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> engine &#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">PrintMessage</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>Engine.cpp</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Engine.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">engine::PrintMessage</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;hello world!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在Game项目的src文件下添加.cpp文件:</p>
+<p><code>Application.cpp</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;Engine.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    engine::<span class="built_in">PrintMessage</span>();</span><br><span class="line"></span><br><span class="line">	std::cin.<span class="built_in">get</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这时如果编译运行会发现不会成功，因为Engine和Game并没有产生任何联系，也就是链接</p>
+</blockquote>
+<h3 id="将项目Engine设为库供Game调用，而Game为main函数所在项目，也就是主项目；"><a href="#将项目Engine设为库供Game调用，而Game为main函数所在项目，也就是主项目；" class="headerlink" title="将项目Engine设为库供Game调用，而Game为main函数所在项目，也就是主项目；"></a>将项目Engine设为库供Game调用，而Game为main函数所在项目，也就是主项目；</h3><blockquote>
+<ol>
+<li>右键Engine -&gt; 属性 -&gt;配置属性-&gt; 常规 -&gt; 配置类型选择静态库(.lib)</li>
+<li>配置和平台最好选全部以免出现问题。</li>
+</ol>
+</blockquote>
+<p><img src="https://s2.loli.net/2023/01/20/mgFUVZY2QjDvPEC.jpg" alt="c2_3.jpg"></p>
+<blockquote>
+<ol>
+<li>同样方法设置Game属性：右键Game -&gt; 属性 -&gt;配置属性-&gt; 常规 -&gt; 配置类型选择应用程序(.exe)</li>
+<li>将库Engine项目的src目录(也就是<code>Engine.h</code>和<code>Engine.cpp</code>)包含在Game项目中：<ol>
+<li>属性 -&gt; C/C++ -&gt; 常规 -&gt; 附加包含目录中添加：<code>$(SolutionDir)Engine\src</code></li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p><img src="https://s2.loli.net/2023/01/20/7EZ4FYkjhCreib6.jpg" alt="c2_4.jpg"></p>
+<blockquote>
+<p><code>$(SolutionDir)</code>是c++的宏定义，会自动定位<code>.sln</code>文件所在目录，方便之后程序文件的搬运。相当于<font color=red>绝对路径</font>：E:\C++\c++self\Game\Engine\src</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2023/01/20/aShNmlnHGYdT8fz.jpg" alt="c2_5.jpg"></p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>此时编译Engine项目,在文件目录下会出现.lib文件。</p>
+<p><img src="https://s2.loli.net/2023/01/20/AmWbNQFwCnyDVu4.jpg" alt="c2_6.jpg"></p>
+<blockquote>
+<p>.lib文件包含了所有的代码实现的，是源代码文件.c或.cpp文件编译生成的，这个lib库就是文本形式的源代码编译后的二进制形式代码。</p>
+</blockquote>
+<p>此时vs提供了将静态库.lib文件引用到项目中的智能方法。</p>
+<blockquote>
+<p>右键Game -&gt; 添加 -&gt; 引用 -&gt; 选中Engine静态库</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2023/01/20/iTrHLsEPo8SjxUq.jpg" alt="c2_7.jpg"></p>
+<p>此时清除解决方案，重新编译Game项目时会发现先编译Engine项目后编译Game项目。</p>
+<blockquote>
+<p>已启动生成…<br>1&gt;—— 已启动生成: 项目: Engine, 配置: Debug x64 ——<br>1&gt;Engine.cpp<br>1&gt;Engine.vcxproj -&gt; E:\C++\c++self\Game\x64\Debug\Engine.lib<br>2&gt;—— 已启动生成: 项目: Game, 配置: Debug x64 ——<br>2&gt;Application.cpp<br>2&gt;Game.vcxproj -&gt; E:\C++\c++self\Game\x64\Debug\Game.exe<br>========== 版本: 2 成功，0 失败，0 更新，0 跳过 ==========<br>========== 占用时间 00:04.872 ==========</p>
+</blockquote>
+<p>运行会成功打印：</p>
+<p><img src="https://s2.loli.net/2023/01/20/o4auLCdWc8zZXSh.jpg" alt="c2_8.jpg"></p>
+<hr>
+<p>对于写大型工程文件，这种结构是非常清晰的，方便后期对每个项目的调试和修改。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">hevon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/12/03/helloworld/">http://example.com/2022/12/03/helloworld/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c/">c++</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/03/c++_copy/"><img class="prev-cover" src="https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">c++内存复制与拷贝函数</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/10/talk1/"><img class="next-cover" src="https://s2.loli.net/2022/12/08/HosWxgMiwNa9kSC.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">今天又是相信自己的一天</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/12/03/c++_copy/" title="c++内存复制与拷贝函数"><img class="cover" src="https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-03</div><div class="title">c++内存复制与拷贝函数</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/me1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">hevon</div><div class="author-info__description">车辆专业本科生</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhanghf4000"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zhanghf4000" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhanghf1942@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hello-World"><span class="toc-text">Hello World!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="toc-text">项目创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E4%B8%8E%E7%BC%96%E5%86%99"><span class="toc-text">文件添加与编写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E9%A1%B9%E7%9B%AEEngine%E8%AE%BE%E4%B8%BA%E5%BA%93%E4%BE%9BGame%E8%B0%83%E7%94%A8%EF%BC%8C%E8%80%8CGame%E4%B8%BAmain%E5%87%BD%E6%95%B0%E6%89%80%E5%9C%A8%E9%A1%B9%E7%9B%AE%EF%BC%8C%E4%B9%9F%E5%B0%B1%E6%98%AF%E4%B8%BB%E9%A1%B9%E7%9B%AE%EF%BC%9B"><span class="toc-text">将项目Engine设为库供Game调用，而Game为main函数所在项目，也就是主项目；</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-text">链接</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/06/matlab2/" title="MATLAB数据可视化函数"><img src="https://pic4.zhimg.com/v2-ea7629bee83b998f29417562ee650ca3_1440w.jpg?source=172ae18b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MATLAB数据可视化函数"/></a><div class="content"><a class="title" href="/2023/01/06/matlab2/" title="MATLAB数据可视化函数">MATLAB数据可视化函数</a><time datetime="2023-01-05T16:00:00.000Z" title="Created 2023-01-06 00:00:00">2023-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/18/matlab/" title="MATLAB矩阵相关操作"><img src="https://pic4.zhimg.com/v2-ea7629bee83b998f29417562ee650ca3_1440w.jpg?source=172ae18b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MATLAB矩阵相关操作"/></a><div class="content"><a class="title" href="/2022/12/18/matlab/" title="MATLAB矩阵相关操作">MATLAB矩阵相关操作</a><time datetime="2022-12-17T16:00:00.000Z" title="Created 2022-12-18 00:00:00">2022-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/06/air_config/" title="高铁模型空气动力学分析"><img src="https://s2.loli.net/2022/12/07/ygBTiS5ZdvEWxqK.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高铁模型空气动力学分析"/></a><div class="content"><a class="title" href="/2022/12/06/air_config/" title="高铁模型空气动力学分析">高铁模型空气动力学分析</a><time datetime="2022-12-05T16:00:00.000Z" title="Created 2022-12-06 00:00:00">2022-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/03/ass/" title="青春有几年口罩的味道"><img src="https://s2.loli.net/2022/12/08/HosWxgMiwNa9kSC.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="青春有几年口罩的味道"/></a><div class="content"><a class="title" href="/2022/12/03/ass/" title="青春有几年口罩的味道">青春有几年口罩的味道</a><time datetime="2022-12-02T16:00:00.000Z" title="Created 2022-12-03 00:00:00">2022-12-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/03/c++_copy/" title="c++内存复制与拷贝函数"><img src="https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++内存复制与拷贝函数"/></a><div class="content"><a class="title" href="/2022/12/03/c++_copy/" title="c++内存复制与拷贝函数">c++内存复制与拷贝函数</a><time datetime="2022-12-02T16:00:00.000Z" title="Created 2022-12-03 00:00:00">2022-12-03</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2023/01/19/gA2ELP8Hi1tzrcw.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By hevon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div class="github-badge"> <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></div>  <div class="github-badge"><span class="badge-subject">Theme</span><span class="badge-value bg-blueviolet">Butterfly</span></div>  <div class="github-badge"> <span class="badge-subject">Service</span><span class="badge-value bg-orange">Tencent Cloud</span></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'OQKfj11Tn1bL3dDeHkxLiLVS-gzGzoHsz',
+      appKey: 'GcE98ElxfZWITiJb5FK9dAIv',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2022/12/03/helloworld/'
+    this.page.identifier = '/2022/12/03/helloworld/'
+    this.page.title = '使用自建库打印第一个hello world'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><div class="aplayer no-destroy" data-id="7021632315" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script src="/js/lunar.js"></script><script src="/js/day.js"></script><script type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script></div></body></html>
